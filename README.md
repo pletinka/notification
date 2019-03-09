@@ -7,13 +7,13 @@
 1. Timeline records contain in Batches: every 100 milliseconds is a separate butch - it is a Sorted Set for all records in this "period". Like: 
 
 Batch "1". Key: "2019-03-09 :54:15.5"
-2019-03-09 :54:15.580
-2019-03-09 :54:15.520
-2019-03-09 :54:15.530
+- 2019-03-09 :54:15.580
+- 2019-03-09 :54:15.520
+- 2019-03-09 :54:15.530
 
 Batch "2": Key "2019-03-09 :54:15.6"
-2019-03-09 :54:15.630
-2019-03-09 :54:15.640
+- 2019-03-09 :54:15.630
+- 2019-03-09 :54:15.640
 
 - The key is a "long" representation of "2019-03-09 :54:15.5".
 - Values - text messages
