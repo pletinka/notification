@@ -2,7 +2,7 @@
 - Job 1: async connect: add the msg to the Sorted Set. One Sorted Set for all nodes per time unit - 100 milliseconds.
 - Job 2: sync connects: pull data from the Sorted Set and push them to the List every 100 milliseconds. It works with Redis transaction and provides right consistency. it is separate list for each node
 - Job 3: sync connect: blocked read from the List and print the message
-
+![alt text](https://raw.githubusercontent.com/pletinka/notification/develop/unnamed.png)
 # Data structure details:
 1. Timeline records contain in Batches: every 100 milliseconds is a separate butch - it is a Sorted Set for all records in this "period". Like: 
 
