@@ -26,7 +26,7 @@ Batch "2": Key "2019-03-09 :54:15.6"
 - Why List? - provide the blocked queue functionality in FIFO mode with the right time complexity: BLPOP - O(1), LPUSH - O(1).
 
 # Some other details:
-- I track the last processing time in the separate key-value record for each node. Key: "node name" Value "2019-03-09 :54:15.6" - last processed time. Other more streaming variant - use BRPOPLPUSH to keep the last processed message in separate queues. But need one more Job to erase this additional queue for each data. It depends on the requirements and is part design compromises: operations on the node vs overhead data on the Redis cluster.
+- I track the last processing time in the separate key-value record for each node. Key: "node name" Value "2019-03-09 :54:15.6" - last processed batch. Other more streaming variant - use BRPOPLPUSH to keep the last processed message in separate queues. But need one more Job to erase this additional queue for each data. It depends on the requirements and is part design compromises: operations on the node vs overhead data on the Redis cluster.
 - I use async and sync Redis connections for different cases: sync - when should guarantee order, async - when order doesn't matter
 - "nodeAlive" flag provides the status of the node. It is a part of the graceful shutdown workflow. It doesn't implement as it is out of scope for this task. It is always "true" in the code for now.
 - Batch for 100 milliseconds - it is a configurable value.
